@@ -62,6 +62,7 @@ class MiddlewareAct implements RequestHandlerInterface
             return new EmptyResponse(StatusCodeInterface::STATUS_NOT_FOUND);
         }
 
+        
         $response = $this->{$action}($request);
         if (method_exists($response, 'getPayLoad')) {
             $payLoad = $response->getPayLoad();
